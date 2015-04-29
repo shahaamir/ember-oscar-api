@@ -2,7 +2,7 @@ import DS from 'ember-data';
 
 export default DS.Model.extend({
     product: DS.belongsTo('product', {inverse: 'stockrecords'}),
-    partner: DS.belongsTp('partner'),
+    partner: DS.belongsTo('partner'),
     partner_sku: DS.attr('string'),
     price_currency: DS.attr('string'),
     price_excl_tax: DS.attr('number'),

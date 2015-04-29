@@ -6,6 +6,6 @@ export default DS.Model.extend({
     depth: DS.attr('number'),
     full_name: DS.attr('string'),
     children: DS.hasMany('category', {async: true, inverse: 'parent'}),
-    products: DS.hasMany('product', {async:true, inverse: 'categories'}),
+    products: DS.hasMany('product', {async:true}),
     parent: DS.belongsTo('category', {inverse: 'children'}),
 });
