@@ -3,9 +3,9 @@ import {
   test
 } from 'ember-qunit';
 
-moduleForModel('stockrecord', {
+moduleForModel('productattribute', {
   // Specify the other units that are required for this test.
-    needs: ['model:product']
+  needs: []
 });
 
 test('it exists', function(assert) {

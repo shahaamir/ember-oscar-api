@@ -1,19 +1,15 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
+    url: DS.attr('string'),
     title: DS.attr('string'),
-    image_l: DS.attr('string'),
-    image_m: DS.attr('string'),
-    image_s: DS.attr('string'),
-    price: DS.attr('number'),
-    compare_at_price: DS.attr('number'),
-    available: DS.attr('boolean'),
-    categories: DS.hasMany('category', {async: true, inverse: 'products'}),
-    on_sale: DS.attr('boolean'),
-    product_class: DS.attr('number'),
-    size: DS.attr('string'),
-    vendor: DS.attr('string'),
-    weight_based: DS.attr('boolean'),
-    weight_with_unit: DS.attr('string'),
+    description: DS.attr('string'),
+    date_created: DS.attr('date'),
+    date_updated: DS.attr('date'),
+    recommended_products: DS.hasMany('product', {async: true}),
+    attributes: DS.hasMany('productattribute'),
     stockrecords: DS.hasMany('stockrecord', {async:true}),
+    images: DS.hasMany('productimage', {inverse: 'product'}),
+    price: DS.hasMany('productprice', {async: true}),
+    availability: DS.hasMany('productavailability', {async: true}),
 });
